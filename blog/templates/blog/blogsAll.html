@@ -20,7 +20,7 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Dibya Probhat Roy</a>
+  <a class="navbar-brand" href="#">Dibya's Blog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,7 +33,7 @@
         <a class="nav-link" href="#">Resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link active" href="#">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -44,39 +44,27 @@
     </header>
 
     <main role="main">
+    <div class="container">
+      <h1 class = "text-center pt-3">Welcome To Dibya's Blog</h1>
+      <br />
+      <br />
+      <h2>Latest Post</h2>
+      <hr />
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Hi, Roy Here</h1>
-          <p class="lead text-muted">I love to code. I love Game development, Web development, Writing, Trekking, Travelling, Swimming and last but not least - Working Out.</p>
-          <p>
-            <a href="mailto:dibyaprobhatroy@gmail.com" class="btn btn-primary my-2">eMail Me</a>
-            <a href="#" class="btn btn-secondary my-2">Like Page</a>
-          </p>
-        </div>
-      </section>
+       {%for blog in bItems.all %}
+       -------------------------------<br />
+       <a href=""><h3>{{ blog.blogheading }}</h3></a>
+       {{ blog.blogtime }}
+       <br />
+       <img class ="img-fluid" src="{{ blog.blogimage.url }}" height = 200 width = 200/>
+       <br />
+       <p>{{ blog.blogcontent }}</p>
+       {% endfor %}
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-
-          <div class="row">
-
-          	{% for j in jobs.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{  j.image.url }}" height = 200 width = 200/>
-                <div class="card-body">
-                  <p class="card-text">{{ j.summary }}</p>
-                 </div>
-              </div>
-            </div>
-            {% endfor %}
-           <!--startend-->
-          </div>
-        </div>
-      </div>
-
+    </div>
     </main>
+
+   
 
     <footer class="text-muted">
       <div class="container text-center">
