@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en">
+
   <head>
+  {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Album example for Bootstrap</title>
+
+    <title>Dibya Probhat Roy</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -20,20 +22,20 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Dibya Probhat Roy</a>
+  <a class="navbar-brand" href="{%url 'homePage'%}">Dibya Probhat Roy</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Twitter <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="https://www.google.to.in">Twitter <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Resume</a>
+        <a class="nav-link" href="{% static 'me.jpg' %}">Resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="{% url 'allBlogs' %}">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -53,6 +55,7 @@
             <a href="mailto:dibyaprobhatroy@gmail.com" class="btn btn-primary my-2">eMail Me</a>
             <a href="#" class="btn btn-secondary my-2">Like Page</a>
           </p>
+          <img src="{% static 'me.jpg'%}" height = 400 width = 400 />
         </div>
       </section>
 
